@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
         
 # to read all employee records
 class EmployeeSerializer(serializers.ModelSerializer):
-     user = UserSerializer()
+    user = UserSerializer()
     class Meta:
         model = Employee
         fields = ['id', 'name', 'position', 'department','user']
