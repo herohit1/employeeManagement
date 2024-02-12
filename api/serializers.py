@@ -6,7 +6,7 @@ import re
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        fields = ['id', 'name', 'position', 'department']
+        fields = ['id', 'name', 'position', 'department','user']
     
     
     def validate_name(self, value):
