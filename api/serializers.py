@@ -2,8 +2,15 @@ from rest_framework import serializers
 from .models import Employee
 import re
 
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username']
+        
 # to read all employee records
 class EmployeeSerializer(serializers.ModelSerializer):
+     user = UserSerializer()
     class Meta:
         model = Employee
         fields = ['id', 'name', 'position', 'department','user']
